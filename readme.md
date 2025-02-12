@@ -1,4 +1,4 @@
-# Symfony
+# Symfony DDD SAMPLE SKELETON PROJECT
 
 ### Dockerise Symfony Application
 

@@ -11,6 +11,7 @@ services:
         - ENABLE_XDEBUG=${ENABLE_XDEBUG}
     environment:
       PHP_IDE_CONFIG: 'serverName=Docker'
+      DATABASE_URL="postgresql://symfony:symfony@database:5432/symfony?serverVersion=17&charset=utf8":
     volumes:
       - ./../:/var/www/
 

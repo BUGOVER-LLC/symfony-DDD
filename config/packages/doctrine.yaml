@@ -17,17 +17,17 @@ doctrine:
     auto_mapping: true
     mappings:
       App:
-        type: attribute
+        type: xml
         is_bundle: false
-        dir: '%kernel.project_dir%/src/Entity'
-        prefix: 'App\Entity'
-        alias: App
+        dir: '%kernel.project_dir%/src/User/Infrastructure/Database/ORM'
+        prefix: 'App\User\Domain\Entity'
+        alias: User
 
-when@test:
-  doctrine:
-    dbal:
-      # "TEST_TOKEN" is typically set by ParaTest
-      dbname_suffix: '_test%env(default::TEST_TOKEN)%'
+#when@test:
+#  doctrine:
+#    dbal:
+#      # "TEST_TOKEN" is typically set by ParaTest
+#      dbname_suffix: '_test%env(default::TEST_TOKEN)%'
 
 when@prod:
   doctrine:
