@@ -32,29 +32,44 @@
 - [X] [Database Testing](https://symfony.com/doc/current/testing/database.html)
 - [X] [Fixtures](https://symfony.com/bundles/DoctrineFixturesBundle/current/index.html)
 
-### CQRS
+[//]: # (### CQRS)
 
-- [X] [CQRS pattern](https://docs.microsoft.com/en-us/azure/architecture/patterns/cqrs)
-- [X] [Symfony Messenger](https://symfony.com/doc/current/messenger.html)
+[//]: # ()
+[//]: # (- [X] [CQRS pattern]&#40;https://docs.microsoft.com/en-us/azure/architecture/patterns/cqrs&#41;)
 
-### Auth
+[//]: # (- [X] [Symfony Messenger]&#40;https://symfony.com/doc/current/messenger.html&#41;)
 
-- [X] [JWT Authentication](https://github.com/lexik/LexikJWTAuthenticationBundle)
-- [X] [JWT Refresh Token](https://github.com/markitosgv/JWTRefreshTokenBundle)
+[//]: # ()
+[//]: # (### Auth)
 
-### Static analysis tool
+[//]: # ()
+[//]: # (- [X] [JWT Authentication]&#40;https://github.com/lexik/LexikJWTAuthenticationBundle&#41;)
 
-- [X] [PHP CS Fixer](https://github.com/FriendsOfPHP/PHP-CS-Fixer)
-- [X] [Deptrac](https://qossmic.github.io/deptrac/)
-- [X] [PHPStan](https://github.com/phpstan/phpstan)
+[//]: # (- [X] [JWT Refresh Token]&#40;https://github.com/markitosgv/JWTRefreshTokenBundle&#41;)
 
-### DDD
+[//]: # ()
+[//]: # (### Static analysis tool)
 
-- [X] [Strategic & Tactical design]()
+[//]: # ()
+[//]: # (- [X] [PHP CS Fixer]&#40;https://github.com/FriendsOfPHP/PHP-CS-Fixer&#41;)
 
-### CI/CD
+[//]: # (- [X] [Deptrac]&#40;https://qossmic.github.io/deptrac/&#41;)
 
-- [X] [Gitlab CI/CD](https://docs.gitlab.com/ee/ci/yaml/)
-- [X] [GitHub Actions](https://docs.github.com/en/actions/quickstart)
+[//]: # (- [X] [PHPStan]&#40;https://github.com/phpstan/phpstan&#41;)
 
-Documentation [for development(docs/index.md).
+[//]: # ()
+[//]: # (### DDD)
+
+[//]: # ()
+[//]: # (- [X] [Strategic & Tactical design]&#40;&#41;)
+
+[//]: # ()
+[//]: # (### CI/CD)
+
+[//]: # ()
+[//]: # (- [X] [Gitlab CI/CD]&#40;https://docs.gitlab.com/ee/ci/yaml/&#41;)
+
+[//]: # (- [X] [GitHub Actions]&#40;https://docs.github.com/en/actions/quickstart&#41;)
+
+[//]: # ()
+[//]: # (Documentation [for development&#40;docs/index.md&#41;.)
