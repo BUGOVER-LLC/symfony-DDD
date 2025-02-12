@@ -1,4 +1,4 @@
-# Symfony DDD SAMPLE SKELETON PROJECT
+# Symfony DDD SAMPLE PROJECT (Generated on flex skeleton)
 
 ### Dockerise Symfony Application
 
