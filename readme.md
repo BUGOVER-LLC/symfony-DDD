@@ -32,12 +32,12 @@
 - [X] [Database Testing](https://symfony.com/doc/current/testing/database.html)
 - [X] [Fixtures](https://symfony.com/bundles/DoctrineFixturesBundle/current/index.html)
 
-[//]: # (### CQRS)
+### CQRS
 
-[//]: # ()
-[//]: # (- [X] [CQRS pattern]&#40;https://docs.microsoft.com/en-us/azure/architecture/patterns/cqrs&#41;)
 
-[//]: # (- [X] [Symfony Messenger]&#40;https://symfony.com/doc/current/messenger.html&#41;)
+- [X] [CQRS pattern](https://docs.microsoft.com/en-us/azure/architecture/patterns/cqrs)
+
+- [X] [Symfony Messenger](https://symfony.com/doc/current/messenger.html)
 
 [//]: # ()
 [//]: # (### Auth)

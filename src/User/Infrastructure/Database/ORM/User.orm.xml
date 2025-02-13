@@ -5,7 +5,7 @@
 
     <entity name="App\User\Domain\Entity\User" table="users">
         <id name="ulid" type="string" length="26">
-            <generator strategy="NONE"/>
+            <generator strategy="AUTO"/>
         </id>
 
         <field name="email" type="string"/>
