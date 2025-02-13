@@ -12,6 +12,8 @@ services:
     environment:
       - PHP_IDE_CONFIG="serverName=Docker"
       - DATABASE_URL=postgresql://symfony:symfony@database/symfony?serverVersion=17&charset=utf8
+    networks:
+      - dddapp
     volumes:
       - ./../:/var/www/
 
@@ -25,6 +27,8 @@ services:
       - ..:/var/www:rw
     depends_on:
       - php-fpm
+    networks:
+      - dddapp
 
   database:
     container_name: database
@@ -38,6 +42,12 @@ services:
       POSTGRES_USER: ${POSTGRES_USER:-app}
     volumes:
       - database_data:/var/lib/postgresql/data:rw
+    networks:
+      - dddapp
+
+networks:
+  dddapp:
+    driver: bridge
 
 volumes:
   database_data:

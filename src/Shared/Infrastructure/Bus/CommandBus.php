@@ -21,6 +21,6 @@ class CommandBus implements CommandBusInterface
 
     #[\Override] public function execute(CommandInterface $command): mixed
     {
-        $this->handle($command);
+        return $this->handle($command);
     }
 }

@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace App\Tests\Functional\User\Application\Command;
 
 use App\Shared\Application\Command\CommandBusInterface;
+use App\Tests\Resource\Tools\FakerTool;
 use App\User\Application\Command\CreateUserCommand;
 use App\User\Application\Command\CreateUserCommandHandler;
 use App\User\Domain\Repository\UserRepositoryInterafce;
@@ -16,9 +17,11 @@ use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
  */
 class CreateUserCommandHandlerTest extends WebTestCase
 {
+    use FakerTool;
+
     public function test_user_created_successfully()
     {
-        $command = new CreateUserCommand($this->faker->email(), $this->faker->password());
+        $command = new CreateUserCommand($this->getFaker()->email(), $this->getFaker()->password());
         $userUlid = $this->commandBus->execute($command);
         $user = $this->userRepository->findByUlid($userUlid);
 
@@ -29,7 +32,6 @@ class CreateUserCommandHandlerTest extends WebTestCase
     {
         parent::setUp();
 
-        $this->faker = Factory::create();
         $this->commandBus = static::getContainer()->get(CommandBusInterface::class);
         $this->userRepository = static::getContainer()->get(UserRepositoryInterafce::class);
     }
