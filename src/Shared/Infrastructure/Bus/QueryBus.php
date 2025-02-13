@@ -21,6 +21,6 @@ class QueryBus implements QueryBusInterface
 
     #[\Override] public function execute(QueryInterface $query): mixed
     {
-        $this->handle($query);
+        return $this->handle($query);
     }
 }

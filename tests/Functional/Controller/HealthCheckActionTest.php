@@ -9,7 +9,7 @@ use Symfony\Component\HttpFoundation\Request;
 
 class HealthCheckActionTest extends WebTestCase
 {
-    public function test_request_success_response()
+    public function test_request_success_response(): void
     {
         $client = static::createClient();
         $client->request(Request::METHOD_GET, '/health-check');

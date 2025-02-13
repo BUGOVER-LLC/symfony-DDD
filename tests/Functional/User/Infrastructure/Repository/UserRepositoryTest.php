@@ -12,6 +12,7 @@ use Faker\Generator;
 use Liip\TestFixturesBundle\Services\DatabaseToolCollection;
 use Liip\TestFixturesBundle\Services\DatabaseTools\ORMDatabaseTool;
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
+use App\User\Domain\Entity\User;
 
 class UserRepositoryTest extends WebTestCase
 {
@@ -45,7 +46,7 @@ class UserRepositoryTest extends WebTestCase
         $executor = $this->databaseTool->loadFixtures([UserFixture::class]);
         $user = $executor->getReferenceRepository()->getReference(
             UserFixture::REFERENCE,
-            'App\User\Domain\Entity\User'
+            User::class
         );
 
         $existUser = $this->userRepository->findByUlid($user->getUlid());
