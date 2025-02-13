@@ -17,17 +17,16 @@ services:
     resource: '../src/'
     exclude:
       - '../src/DependencyInjection/'
-      - '../src/Entity/'
-      - '../src/Kernel.php'
+      - '../src/Shared/Infrastructure/Kernel.php'
 
   _instanceof:
     App\Shared\Application\Command\CommandHandlerInterface:
       tags:
-        _ { name: messenger.message_handler, bus: command.bus }
+        - { name: messenger.message_handler, bus: command.bus }
 
-    App\Shared\Application\Command\QueryHandlerInterface:
+    App\Shared\Application\Query\QueryHandlerInterface:
       tags:
-        _ { name: messenger.message_handler, bus: query.bus }
+        - { name: messenger.message_handler, bus: query.bus }
 
   # add more service definitions when explicit configuration is needed
   # please note that last definitions always *replace* previous ones
