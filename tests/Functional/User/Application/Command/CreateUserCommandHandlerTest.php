@@ -21,7 +21,7 @@ class CreateUserCommandHandlerTest extends WebTestCase
     /**
      * @var mixed
      */
-    private mixed $commandBus;
+    private CommandBusInterface $commandBus;
 
     /**
      * @var UserRepositoryInterafce
