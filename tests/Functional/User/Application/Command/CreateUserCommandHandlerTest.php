@@ -9,7 +9,6 @@ use App\Tests\Resource\Tools\FakerTool;
 use App\User\Application\Command\CreateUserCommand;
 use App\User\Application\Command\CreateUserCommandHandler;
 use App\User\Domain\Repository\UserRepositoryInterafce;
-use Faker\Factory;
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 
 /**
@@ -18,6 +17,16 @@ use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 class CreateUserCommandHandlerTest extends WebTestCase
 {
     use FakerTool;
+
+    /**
+     * @var mixed
+     */
+    private mixed $commandBus;
+
+    /**
+     * @var UserRepositoryInterafce
+     */
+    private UserRepositoryInterafce $userRepository;
 
     public function test_user_created_successfully()
     {
