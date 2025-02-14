@@ -13,6 +13,8 @@
     "doctrine/orm": "^3.3",
     "gesdinet/jwt-refresh-token-bundle": "^1.4",
     "lexik/jwt-authentication-bundle": "^3.1",
+    "nelmio/api-doc-bundle": "^4.36",
+    "symfony/asset": "6.4.*",
     "symfony/console": "6.4.*",
     "symfony/dotenv": "6.4.*",
     "symfony/flex": "^2",
@@ -20,6 +22,7 @@
     "symfony/messenger": "6.4.*",
     "symfony/runtime": "6.4.*",
     "symfony/translation": "6.4.*",
+    "symfony/twig-bundle": "6.4.*",
     "symfony/uid": "6.4.*",
     "symfony/yaml": "6.4.*"
   },

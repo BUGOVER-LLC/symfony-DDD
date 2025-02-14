@@ -34,23 +34,28 @@
 
 ### CQRS
 
-
 - [X] [CQRS pattern](https://docs.microsoft.com/en-us/azure/architecture/patterns/cqrs)
 
 - [X] [Symfony Messenger](https://symfony.com/doc/current/messenger.html)
 
-[//]: # ()
-[//]: # (### Auth)
+### Auth
+
+- [X] [JWT Authentication](https://github.com/lexik/LexikJWTAuthenticationBundle)
+
+- [X] [JWT Refresh Token](https://github.com/markitosgv/JWTRefreshTokenBundle)
+
+### Swagger documentation
+
+- [x] [Symfony swagger](https://symfony.com/bundles/NelmioApiDocBundle/current/index.html)
+
+- [x] [Swagger PHP](https://zircote.github.io/swagger-php/)
 
 [//]: # ()
-[//]: # (- [X] [JWT Authentication]&#40;https://github.com/lexik/LexikJWTAuthenticationBundle&#41;)
 
-[//]: # (- [X] [JWT Refresh Token]&#40;https://github.com/markitosgv/JWTRefreshTokenBundle&#41;)
-
-[//]: # ()
 [//]: # (### Static analysis tool)
 
 [//]: # ()
+
 [//]: # (- [X] [PHP CS Fixer]&#40;https://github.com/FriendsOfPHP/PHP-CS-Fixer&#41;)
 
 [//]: # (- [X] [Deptrac]&#40;https://qossmic.github.io/deptrac/&#41;)
@@ -58,18 +63,23 @@
 [//]: # (- [X] [PHPStan]&#40;https://github.com/phpstan/phpstan&#41;)
 
 [//]: # ()
+
 [//]: # (### DDD)
 
 [//]: # ()
+
 [//]: # (- [X] [Strategic & Tactical design]&#40;&#41;)
 
 [//]: # ()
+
 [//]: # (### CI/CD)
 
 [//]: # ()
+
 [//]: # (- [X] [Gitlab CI/CD]&#40;https://docs.gitlab.com/ee/ci/yaml/&#41;)
 
 [//]: # (- [X] [GitHub Actions]&#40;https://docs.github.com/en/actions/quickstart&#41;)
 
 [//]: # ()
+
 [//]: # (Documentation [for development&#40;docs/index.md&#41;.)
