@@ -12,23 +12,42 @@
     <php>
         <ini name="display_errors" value="1"/>
         <ini name="error_reporting" value="-1"/>
+        <ini name="memory_limit" value="512M"/>
         <server name="APP_ENV" value="test" force="true"/>
         <server name="SHELL_VERBOSITY" value="-1"/>
         <server name="SYMFONY_PHPUNIT_REMOVE" value=""/>
-        <server name="SYMFONY_PHPUNIT_VERSION" value="9.5"/>
+        <server name="SYMFONY_PHPUNIT_VERSION" value="9.6"/>
     </php>
 
     <testsuites>
         <testsuite name="Project Test Suite">
-            <directory>tests</directory>
+            <directory phpVersion="8.3">tests</directory>
         </testsuite>
     </testsuites>
 
-    <coverage processUncoveredFiles="true">
+    <coverage includeUncoveredFiles="true"
+              processUncoveredFiles="true"
+              ignoreDeprecatedCodeUnits="true"
+              disableCodeCoverageIgnore="true"
+              cacheDirectory="var/cache/test"
+    >
         <include>
             <directory suffix=".php">src</directory>
         </include>
+
+        <report>
+            <clover outputFile="tests/.report/phpunit/clover.xml"/>
+            <html outputDirectory="tests/.report/phpunit/html"/>
+            <php outputFile="tests/.report/coverage.serialized"/>
+            <xml outputDirectory="tests/.report/xml-coverage"/>
+            <text outputFile="php://stdout"/>
+        </report>
     </coverage>
+
+    <logging>
+        <testdoxHtml outputFile="tests/.report/testdox.html"/>
+        <testdoxText outputFile="tests/.report/testdox.txt"/>
+    </logging>
 
     <listeners>
         <listener class="Symfony\Bridge\PhpUnit\SymfonyTestsListener"/>
