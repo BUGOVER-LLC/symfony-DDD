@@ -45,6 +45,15 @@ services:
     networks:
       - dddapp
 
+  redis:
+    container_name: ${REDIS_CONTAINER_NAME:-redis}
+    restart: on-failure
+    image: redis:7.4-alpine
+    ports:
+      - "16379:6379"
+    networks:
+      - dddapp
+
 networks:
   dddapp:
     driver: bridge
