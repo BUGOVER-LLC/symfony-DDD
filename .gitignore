@@ -1,4 +1,7 @@
-.idea
+###> IDE/config ###
+/.idea
+/.vscode
+###> IDE/config ###
 
 ###> symfony/framework-bundle ###
 /.env
@@ -17,11 +20,10 @@
 /phpunit.xml
 ###< symfony/phpunit-bridge ###
 
-###> phpunit/phpunit ###
-/phpunit.xml
-/.phpunit.result.cache
-###< phpunit/phpunit ###
-
 ###> lexik/jwt-authentication-bundle ###
 /config/jwt/*.pem
 ###< lexik/jwt-authentication-bundle ###
+
+###> NodeJS/node-modules ###
+/node_modules
+###> NodeJS/node-modules ###
