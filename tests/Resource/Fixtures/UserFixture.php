@@ -15,9 +15,13 @@ class UserFixture extends Fixture
 
     public const string REFERENCE = 'user';
 
+    public function __construct(private readonly UserFactory $userFactory)
+    {
+    }
+
     #[\Override] public function load(ObjectManager $manager): void
     {
-        $user = (new UserFactory())->create($this->getFaker()->email(), $this->getFaker()->password(32, 32));
+        $user = $this->userFactory->create($this->getFaker()->email(), $this->getFaker()->password(32, 32));
 
         $manager->persist($user);
         $manager->flush();

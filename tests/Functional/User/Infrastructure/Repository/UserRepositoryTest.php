@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace App\Tests\Functional\User\Infrastructure\Repository;
 
 use App\Tests\Resource\Fixtures\UserFixture;
+use App\User\Domain\Entity\User;
 use App\User\Domain\Factory\UserFactory;
 use App\User\Infrastructure\Repository\UserRepository;
 use Faker\Factory;
@@ -12,7 +13,6 @@ use Faker\Generator;
 use Liip\TestFixturesBundle\Services\DatabaseToolCollection;
 use Liip\TestFixturesBundle\Services\DatabaseTools\ORMDatabaseTool;
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
-use App\User\Domain\Entity\User;
 
 class UserRepositoryTest extends WebTestCase
 {
@@ -31,9 +31,14 @@ class UserRepositoryTest extends WebTestCase
      */
     private ORMDatabaseTool $databaseTool;
 
+    /**
+     * @var UserFactory
+     */
+    private UserFactory $userFactory;
+
     public function test_user_added_success(): void
     {
-        $user = (new UserFactory())->create($this->faker->email(), $this->faker->password());
+        $user = $this->userFactory->create($this->faker->email(), $this->faker->password());
         $this->userRepository->add($user);
         $existsUser = $this->userRepository->findByUlid($user->getUlid());
 
@@ -60,6 +65,7 @@ class UserRepositoryTest extends WebTestCase
 
         $this->userRepository = static::getContainer()->get(UserRepository::class);
         $this->databaseTool = static::getContainer()->get(DatabaseToolCollection::class)->get();
+        $this->userFactory = self::getContainer()->get(UserFactory::class);
         $this->faker = Factory::create();
     }
 }
