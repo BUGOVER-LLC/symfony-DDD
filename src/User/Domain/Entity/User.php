@@ -25,7 +25,7 @@ class User implements AuthUserInterface
         return $this->ulid;
     }
 
-    public function getPassword(): string
+    public function getPassword(): ?string
     {
         return $this->password;
     }

@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\Tests\Shared\Infrastructure\Security;
+namespace App\Tests\Functional\Shared\Infrastructure\Security;
 
 use App\Shared\Infrastructure\Security\AuthUser;
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;

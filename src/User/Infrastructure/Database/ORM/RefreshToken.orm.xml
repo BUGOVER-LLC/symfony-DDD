@@ -1,0 +1,15 @@
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping"
+                  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                  xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping
+                          https://www.doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+
+    <entity name="App\User\Domain\Entity\RefreshToken" table="refresh_token">
+        <id name="id" type="integer">
+            <generator strategy="SEQUENCE"/>
+        </id>
+
+        <field column="refresh_token" name="refreshToken" type="string" length="128"/>
+        <field column="username" name="username" type="string"/>
+        <field column="valid" name="valid" type="date_immutable" nullable="true"/>
+    </entity>
+</doctrine-mapping>
