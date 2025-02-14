@@ -1,3 +1,5 @@
+# https://symfony.com/doc/current/translation.html
+
 framework:
   default_locale: en
   translator:

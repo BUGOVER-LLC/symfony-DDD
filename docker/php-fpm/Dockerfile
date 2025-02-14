@@ -41,6 +41,7 @@ RUN docker-php-ext-install -j$(getconf _NPROCESSORS_ONLN) \
     pcntl \
     pdo_pgsql \
     sockets \
+    opcache \
     zip
 
 # Pecl packages

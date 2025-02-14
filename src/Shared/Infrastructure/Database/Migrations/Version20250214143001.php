@@ -23,8 +23,8 @@ final class Version20250214143001 extends AbstractMigration
         $this->addSql('DROP SEQUENCE refresh_tokens_id_seq CASCADE');
         $this->addSql('CREATE SEQUENCE refresh_token_id_seq INCREMENT BY 1 MINVALUE 1 START 1');
         $this->addSql('DROP INDEX uniq_c74f2195c74f2195');
-        $this->addSql('ALTER TABLE refresh_token ALTER valid TYPE DATE');
-        $this->addSql('ALTER TABLE refresh_token ALTER valid DROP NOT NULL');
+        $this->addSql('ALTER TABLE refresh_tokens ALTER valid TYPE DATE');
+        $this->addSql('ALTER TABLE refresh_tokens ALTER valid DROP NOT NULL');
         $this->addSql('COMMENT ON COLUMN refresh_token.valid IS \'(DC2Type:date_immutable)\'');
         $this->addSql('ALTER TABLE users ALTER password DROP NOT NULL');
     }
@@ -35,10 +35,10 @@ final class Version20250214143001 extends AbstractMigration
         $this->addSql('CREATE SCHEMA public');
         $this->addSql('DROP SEQUENCE refresh_token_id_seq CASCADE');
         $this->addSql('CREATE SEQUENCE refresh_tokens_id_seq INCREMENT BY 1 MINVALUE 1 START 1');
-        $this->addSql('ALTER TABLE refresh_token ALTER valid TYPE TIMESTAMP(0) WITHOUT TIME ZONE');
-        $this->addSql('ALTER TABLE refresh_token ALTER valid SET NOT NULL');
+        $this->addSql('ALTER TABLE refresh_tokens ALTER valid TYPE TIMESTAMP(0) WITHOUT TIME ZONE');
+        $this->addSql('ALTER TABLE refresh_tokens ALTER valid SET NOT NULL');
         $this->addSql('COMMENT ON COLUMN refresh_token.valid IS NULL');
-        $this->addSql('CREATE UNIQUE INDEX uniq_c74f2195c74f2195 ON refresh_token (refresh_token)');
+        $this->addSql('CREATE UNIQUE INDEX uniq_c74f2195c74f2195 ON refresh_tokens (refresh_token)');
         $this->addSql('ALTER TABLE users ALTER password SET NOT NULL');
     }
 }

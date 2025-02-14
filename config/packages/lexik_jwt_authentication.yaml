@@ -1,3 +1,5 @@
+# https://github.com/lexik/LexikJWTAuthenticationBundle/tree/3.x/Resources/doc
+
 lexik_jwt_authentication:
   secret_key: '%env(resolve:JWT_SECRET_KEY)%'
   public_key: '%env(resolve:JWT_PUBLIC_KEY)%'

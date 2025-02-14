@@ -5,11 +5,10 @@ declare(strict_types=1);
 namespace App\Tests\Functional\User\Application\Query;
 
 use App\Shared\Application\Query\QueryBusInterface;
-use App\Tests\Resource\Fixtures\UserFixture;
 use App\Tests\Resource\Tools\FakerTool;
+use App\Tests\Resource\Tools\FixtureTool;
 use App\User\Application\DTO\UserDto;
 use App\User\Application\Query\FindUser\FindUserByEmailQuery;
-use App\User\Domain\Entity\User;
 use App\User\Domain\Repository\UserRepositoryInterafce;
 use Liip\TestFixturesBundle\Services\DatabaseToolCollection;
 use Liip\TestFixturesBundle\Services\DatabaseTools\ORMDatabaseTool;
@@ -23,6 +22,7 @@ use function PHPUnit\Framework\assertInstanceOf;
 class FindUserByEmailQueryHandlerTest extends WebTestCase
 {
     use FakerTool;
+    use FixtureTool;
 
     /**
      * @var QueryBusInterface
@@ -41,9 +41,7 @@ class FindUserByEmailQueryHandlerTest extends WebTestCase
 
     public function test_user_command_executed(): void
     {
-        $referenceRepository = $this->databaseTool->loadFixtures([UserFixture::class])->getReferenceRepository();
-
-        $user = $referenceRepository->getReference(UserFixture::REFERENCE, User::class);
+        $user = $this->loadUserFixture();
         $query = new FindUserByEmailQuery($user->getEmail());
         $userDTO = $this->queryBus->execute($query);
 

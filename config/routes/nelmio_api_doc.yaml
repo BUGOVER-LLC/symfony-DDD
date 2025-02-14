@@ -1,3 +1,5 @@
+# https://symfony.com/bundles/NelmioApiDocBundle/current/index.html
+
 #app.swagger:
 #  path: /api/doc.json
 #  methods: GET

@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace App\Tests\Functional\User\Infrastructure\Repository;
 
 use App\Tests\Resource\Fixtures\UserFixture;
+use App\Tests\Resource\Tools\FixtureTool;
 use App\User\Domain\Entity\User;
 use App\User\Domain\Factory\UserFactory;
 use App\User\Infrastructure\Repository\UserRepository;
@@ -16,6 +17,8 @@ use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 
 class UserRepositoryTest extends WebTestCase
 {
+    use FixtureTool;
+
     /**
      * @var UserRepository
      */
@@ -48,11 +51,7 @@ class UserRepositoryTest extends WebTestCase
 
     public function test_user_find_successfuly(): void
     {
-        $executor = $this->databaseTool->loadFixtures([UserFixture::class]);
-        $user = $executor->getReferenceRepository()->getReference(
-            UserFixture::REFERENCE,
-            User::class
-        );
+        $user = $this->loadUserFixture();
 
         $existUser = $this->userRepository->findByUlid($user->getUlid());
 

@@ -1,3 +1,5 @@
+# https://symfony.com/bundles/NelmioApiDocBundle/current/index.html
+
 nelmio_api_doc:
   use_validation_groups: true
   type_info: true

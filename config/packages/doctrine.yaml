@@ -1,3 +1,6 @@
+# https://symfony.com/doc/current/doctrine.html
+# https://www.doctrine-project.org/projects/doctrine-orm/en/3.3/index.html
+
 doctrine:
   dbal:
     url: '%env(resolve:DATABASE_URL)%'

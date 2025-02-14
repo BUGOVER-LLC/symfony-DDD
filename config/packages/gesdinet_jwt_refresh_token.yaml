@@ -1,3 +1,5 @@
+# https://github.com/markitosgv/JWTRefreshTokenBundle
+
 gesdinet_jwt_refresh_token:
   ttl: 2592000
   ttl_update: true
