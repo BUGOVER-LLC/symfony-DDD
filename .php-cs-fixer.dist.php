@@ -166,4 +166,5 @@ return (new Config())
     ->setFinder($finder)
     ->setRules($rules)
     ->setRiskyAllowed(true)
+    ->setCacheFile('var/cache/dev')
     ->setUsingCache(true);
