@@ -4,10 +4,11 @@ declare(strict_types=1);
 
 namespace App\Shared\Infrastructure\Controller;
 
+use OpenApi\Attributes as OA;
+use stdClass;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\Routing\Attribute\Route;
-use OpenApi\Attributes as OA;
 
 class HealthCheckController extends AbstractController
 {
@@ -33,7 +34,7 @@ class HealthCheckController extends AbstractController
     {
         return $this->json([
             'message' => 'success',
-            'data' => (new \stdClass()),
+            'data' => (new stdClass()),
         ]);
     }
 }

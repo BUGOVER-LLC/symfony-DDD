@@ -6,9 +6,13 @@ namespace App\Shared\Infrastructure\Security;
 
 use App\Shared\Domain\Security\AuthUserInterface;
 use App\Shared\Domain\Security\UserGetterInterface;
+use Override;
 use PHPUnit\Framework\Assert;
 use Symfony\Bundle\SecurityBundle\Security;
 use Symfony\Contracts\Translation\TranslatorInterface;
+
+use function get_class;
+use function sprintf;
 
 class AuthUser implements UserGetterInterface
 {
@@ -16,7 +20,7 @@ class AuthUser implements UserGetterInterface
     {
     }
 
-    #[\Override] public function getAuthUser(): AuthUserInterface
+    #[Override] public function getAuthUser(): AuthUserInterface
     {
         $user = $this->security->getUser();
 
@@ -24,7 +28,7 @@ class AuthUser implements UserGetterInterface
         Assert::assertInstanceOf(
             AuthUserInterface::class,
             $user,
-            \sprintf('invalid user type %s', \get_class($user))
+            sprintf('invalid user type %s', get_class($user))
         );
 
         return $user;

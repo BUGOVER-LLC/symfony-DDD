@@ -8,6 +8,7 @@ use App\User\Domain\Entity\User;
 use App\User\Domain\Repository\UserRepositoryInterface;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
+use Override;
 
 class UserRepository extends ServiceEntityRepository implements UserRepositoryInterface
 {
@@ -31,7 +32,7 @@ class UserRepository extends ServiceEntityRepository implements UserRepositoryIn
         return $this->find($ulid);
     }
 
-    #[\Override] public function findByEmail(string $email): ?User
+    #[Override] public function findByEmail(string $email): ?User
     {
         return $this->findOneBy(['email' => $email]);
     }

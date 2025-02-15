@@ -6,6 +6,7 @@ namespace App\User\Domain\Entity;
 
 use App\Shared\Domain\Security\AuthUserInterface;
 use App\Shared\Domain\Service\UlidService;
+use Override;
 use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
 
 class User implements AuthUserInterface
@@ -35,19 +36,19 @@ class User implements AuthUserInterface
         $this->password = $passwordHasher->hashPassword($this, $password);
     }
 
-    #[\Override] public function getRoles(): array
+    #[Override] public function getRoles(): array
     {
         return [
             'ROLE_USER',
         ];
     }
 
-    #[\Override] public function eraseCredentials(): void
+    #[Override] public function eraseCredentials(): void
     {
         // TODO: Implement eraseCredentials() method.
     }
 
-    #[\Override] public function getUserIdentifier(): string
+    #[Override] public function getUserIdentifier(): string
     {
         return $this->getEmail();
     }

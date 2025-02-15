@@ -15,7 +15,8 @@ class CommandBus implements CommandBusInterface
 
     public function __construct(
         private MessageBusInterface $commandBus,
-    ) {
+    )
+    {
         $this->messageBus = $this->commandBus;
     }
 

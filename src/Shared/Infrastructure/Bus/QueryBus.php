@@ -15,7 +15,8 @@ class QueryBus implements QueryBusInterface
 
     public function __construct(
         private MessageBusInterface $queryBus,
-    ) {
+    )
+    {
         $this->messageBus = $this->queryBus;
     }
 
