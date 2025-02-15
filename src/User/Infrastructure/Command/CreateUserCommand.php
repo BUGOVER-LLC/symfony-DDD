@@ -13,7 +13,14 @@ use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Console\Style\SymfonyStyle;
 use Webmozart\Assert\Assert;
 
-#[AsCommand('create:user')]
+#[AsCommand(
+    name: 'create:user',
+    description: '
+    curl -X POST -H "Content-Type: application/json" http://localhost:888/api/auth/v1/login -d {"email": "rferwgfre@mail.comewfew", "password": "few"},
+    curl -H "Authorization: Bearer token" http://localhost:888/api/user/me,
+    curl -X POST -H "Content-Type: application/json" http://localhost:888/api/auth/refresh-token -d {refresh_token: token},
+'
+)]
 class CreateUserCommand extends Command
 {
     public function __construct(

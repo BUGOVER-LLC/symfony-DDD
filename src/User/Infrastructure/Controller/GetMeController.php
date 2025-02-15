@@ -22,7 +22,7 @@ class GetMeController extends AbstractController
         $user = $this->security->getUser();
 
         return $this->json([
-            'token' => $user?->getUlid(),
+            'id' => $user?->getUlid(),
             'email' => $user?->getEmail(),
         ]);
     }
