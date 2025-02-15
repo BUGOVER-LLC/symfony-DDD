@@ -7,8 +7,10 @@ use PhpCsFixer\Finder;
 
 $rules = [
     '@PSR12' => true,
+    '@Symfony' => true,
     'array_indentation' => true,
     'no_unused_imports' => true,
+    'php_unit_method_casing' => ['case' => 'snake_case'],
     'array_syntax' => ['syntax' => 'short'],
     'binary_operator_spaces' => [
         'default' => 'single_space',

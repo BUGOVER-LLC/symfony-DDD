@@ -1,0 +1,24 @@
+# vendor/bin/deptrac analyse --config-file=deptrac-modules.yaml
+
+parameters:
+  paths:
+    - ./src
+    - ./tests
+
+  exclude:
+    - '#.*\/src\/.*\/Infrastructure\/Adapter\/.*#'
+
+  layers:
+    - name: Shared
+      collectors:
+        - type: directory
+          value: /src/Shared/.*
+
+    - name: User
+      collectors:
+        - type: directory
+          value: /src/User/.*
+
+  ruleset:
+    User:
+      - Shared

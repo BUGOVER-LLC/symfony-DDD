@@ -4,9 +4,7 @@ declare(strict_types=1);
 
 namespace App\Tests\Functional\User\Infrastructure\Repository;
 
-use App\Tests\Resource\Fixtures\UserFixture;
 use App\Tests\Resource\Tools\FixtureTool;
-use App\User\Domain\Entity\User;
 use App\User\Domain\Factory\UserFactory;
 use App\User\Infrastructure\Repository\UserRepository;
 use Faker\Factory;

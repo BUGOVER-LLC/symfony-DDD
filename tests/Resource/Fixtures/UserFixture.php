@@ -8,6 +8,7 @@ use App\Tests\Resource\Tools\FakerTool;
 use App\User\Domain\Factory\UserFactory;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Persistence\ObjectManager;
+use Override;
 
 class UserFixture extends Fixture
 {
@@ -19,7 +20,7 @@ class UserFixture extends Fixture
     {
     }
 
-    #[\Override] public function load(ObjectManager $manager): void
+    #[Override] public function load(ObjectManager $manager): void
     {
         $user = $this->userFactory->create($this->getFaker()->email(), $this->getFaker()->password(32, 32));
 

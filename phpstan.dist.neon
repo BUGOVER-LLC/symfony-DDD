@@ -15,6 +15,7 @@ parameters:
     reportStaticMethodSignatures: true
     reportMaybesInPropertyPhpDocTypes: true
     reportWrongPhpDocTypeInVarTag: true
+    checkGenericClassInNonGenericObjectType: false
     parallel:
         jobSize: 20
         maximumNumberOfProcesses: 8
