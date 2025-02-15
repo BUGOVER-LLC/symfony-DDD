@@ -8,7 +8,7 @@ use App\Shared\Application\Command\CommandBusInterface;
 use App\Tests\Resource\Tools\FakerTool;
 use App\User\Application\Command\CreateUserCommand;
 use App\User\Application\Command\CreateUserCommandHandler;
-use App\User\Domain\Repository\UserRepositoryInterafce;
+use App\User\Domain\Repository\UserRepositoryInterface;
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 
 /**
@@ -24,9 +24,9 @@ class CreateUserCommandHandlerTest extends WebTestCase
     private CommandBusInterface $commandBus;
 
     /**
-     * @var UserRepositoryInterafce
+     * @var UserRepositoryInterface
      */
-    private UserRepositoryInterafce $userRepository;
+    private UserRepositoryInterface $userRepository;
 
     public function test_user_created_successfully()
     {
@@ -42,6 +42,6 @@ class CreateUserCommandHandlerTest extends WebTestCase
         parent::setUp();
 
         $this->commandBus = static::getContainer()->get(CommandBusInterface::class);
-        $this->userRepository = static::getContainer()->get(UserRepositoryInterafce::class);
+        $this->userRepository = static::getContainer()->get(UserRepositoryInterface::class);
     }
 }

@@ -9,7 +9,7 @@ use App\Tests\Resource\Tools\FakerTool;
 use App\Tests\Resource\Tools\FixtureTool;
 use App\User\Application\DTO\UserDto;
 use App\User\Application\Query\FindUser\FindUserByEmailQuery;
-use App\User\Domain\Repository\UserRepositoryInterafce;
+use App\User\Domain\Repository\UserRepositoryInterface;
 use Liip\TestFixturesBundle\Services\DatabaseToolCollection;
 use Liip\TestFixturesBundle\Services\DatabaseTools\ORMDatabaseTool;
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
@@ -30,9 +30,9 @@ class FindUserByEmailQueryHandlerTest extends WebTestCase
     private QueryBusInterface $queryBus;
 
     /**
-     * @var UserRepositoryInterafce
+     * @var UserRepositoryInterface
      */
-    private UserRepositoryInterafce $userRepository;
+    private UserRepositoryInterface $userRepository;
 
     /**
      * @var ORMDatabaseTool
@@ -53,7 +53,7 @@ class FindUserByEmailQueryHandlerTest extends WebTestCase
         parent::setUp();
 
         $this->queryBus = self::getContainer()->get(QueryBusInterface::class);
-        $this->userRepository = self::getContainer()->get(UserRepositoryInterafce::class);
+        $this->userRepository = self::getContainer()->get(UserRepositoryInterface::class);
         $this->databaseTool = self::getContainer()->get(DatabaseToolCollection::class)->get();
     }
 }

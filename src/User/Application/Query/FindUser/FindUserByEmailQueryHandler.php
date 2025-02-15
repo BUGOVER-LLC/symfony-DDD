@@ -6,12 +6,12 @@ namespace App\User\Application\Query\FindUser;
 
 use App\Shared\Application\Query\QueryHandlerInterface;
 use App\User\Application\DTO\UserDto;
-use App\User\Domain\Repository\UserRepositoryInterafce;
+use App\User\Domain\Repository\UserRepositoryInterface;
 use RuntimeException;
 
 class FindUserByEmailQueryHandler implements QueryHandlerInterface
 {
-    public function __construct(private readonly UserRepositoryInterafce $userRepositoryInterface)
+    public function __construct(private readonly UserRepositoryInterface $userRepositoryInterface)
     {
     }
 

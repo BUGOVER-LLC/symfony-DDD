@@ -6,12 +6,12 @@ namespace App\User\Application\Command;
 
 use App\Shared\Application\Command\CommandHandlerInterface;
 use App\User\Domain\Factory\UserFactory;
-use App\User\Domain\Repository\UserRepositoryInterafce;
+use App\User\Domain\Repository\UserRepositoryInterface;
 
 class CreateUserCommandHandler implements CommandHandlerInterface
 {
     public function __construct(
-        private readonly UserRepositoryInterafce $userRepository,
+        private readonly UserRepositoryInterface $userRepository,
         private readonly UserFactory $userFactory
     ) {
     }
