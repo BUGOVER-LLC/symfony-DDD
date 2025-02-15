@@ -1,6 +1,7 @@
 # vendor/bin/deptrac analyse --config-file=deptrac-layers.yaml
 
 parameters:
+  cache_file: ./var/dev/cache/.deptrac.cache
   paths:
     - ./src
     - ./tests
