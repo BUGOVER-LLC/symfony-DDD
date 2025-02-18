@@ -10,16 +10,12 @@ use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Attribute\Route;
 
+#[Route('/api/user/me', name: 'auth_user', methods: [Request::METHOD_GET])]
 class GetMeController extends AbstractController
 {
-    public function __construct(private readonly Security $security)
+    public function __invoke(Security $security): JsonResponse
     {
-    }
-
-    #[Route('/api/user/me', name: 'auth_user', methods: [Request::METHOD_GET])]
-    public function __invoke(): JsonResponse
-    {
-        $user = $this->security->getUser();
+        $user = $security->getUser();
 
         return $this->json([
             'id' => $user?->getUlid(),

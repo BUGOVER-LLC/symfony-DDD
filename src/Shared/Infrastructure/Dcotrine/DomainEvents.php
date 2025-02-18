@@ -25,7 +25,7 @@ class DomainEvents implements EventSubscriber
         ];
     }
 
-    public function postPersist(PostPersistEventArgs $args)
+    public function postPersist(PostPersistEventArgs $args): void
     {
     }
 }
